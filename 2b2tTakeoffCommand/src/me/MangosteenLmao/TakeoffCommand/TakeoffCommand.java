@@ -20,9 +20,4 @@ public class TakeoffCommand extends JavaPlugin implements Listener {
 		this.getCommand("takeoff").setExecutor((CommandExecutor)new ActualCommand());
 	}
 	
-	@Override
-	public void onDisable() {
-		Bukkit.getServer().getPluginManager().registerEvents(this, this);
-	}
-	
 }
