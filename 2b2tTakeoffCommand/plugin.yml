@@ -5,4 +5,4 @@ main: me.MangosteenLmao.TakeoffCommand.TakeoffCommand
 description: eases elytra takeoff
 commands:
    takeoff:
-      description: teleports the player three blocks up. It only works if the player has an elytra, is standing on the ground, and has air above them.
+      description: teleports the player three blocks up. Need: elytra, air above, and to be standing on a block.
