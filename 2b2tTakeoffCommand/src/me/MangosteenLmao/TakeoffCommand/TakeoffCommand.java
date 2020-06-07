@@ -21,6 +21,7 @@ public class TakeoffCommand extends JavaPlugin implements Listener {
 		plugin = this;
 		Bukkit.getServer().getPluginManager().registerEvents(this, this);
 	}
+	
 	@Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 		if (label.equalsIgnoreCase("takeoff")) {
@@ -37,12 +38,13 @@ public class TakeoffCommand extends JavaPlugin implements Listener {
 								checkBlock.add(0, 2, 0).getBlock().getType() == Material.AIR) {
 								((Player) sender).teleport(location.add(0, 1, 0));
 								((Player) sender).playSound(location, Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 1F, 10F);
+								
 								Bukkit.getScheduler().scheduleSyncDelayedTask(this, new Runnable() { //delays gliding
 									public void run() {
 										((Player) sender).setGliding(true);
 									}
 								}, 5L);
-								//hi hause lol
+
 							} else {
 								sender.sendMessage(net.md_5.bungee.api.ChatColor.RED + "You need to have two blocks of air above you!");
 							}
